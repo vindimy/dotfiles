@@ -1,7 +1,8 @@
 #!/bin/bash
 
-for i in bash.bashrc screenrc vimrc
+for i in bashrc bash.bashrc screenrc vimrc
 do
+	sudo mv /etc/$i /etc/$i.old
 	sudo ln -sf `pwd`/$i /etc/$i
 done
 
