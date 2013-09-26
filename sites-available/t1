@@ -1,0 +1,13 @@
+server {
+	listen	127.0.0.1:60111;
+	root /var/www2/t1;
+	server_name localhost;
+	server_tokens off;
+
+	index index.htm;
+
+	location / {
+		autoindex off;
+	}
+}
+

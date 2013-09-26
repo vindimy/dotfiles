@@ -1,0 +1,18 @@
+server {
+	root /var/www/maiko.me;
+	server_name maiko.me www.maiko.me;
+
+	location / {
+		index index.htm index.php;
+		autoindex off;
+		try_files $uri $uri/ /blog/index.php;
+	}
+
+	location ~ .php$ {
+		fastcgi_pass    127.0.0.1:9000;
+		fastcgi_index   index.php;
+		fastcgi_param   SCRIPT_FILENAME  /var/www/maiko.me$fastcgi_script_name;
+		include         fastcgi_params;
+	}
+}
+

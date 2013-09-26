@@ -1,0 +1,19 @@
+server {
+	listen	*:80 default_server;
+	root /var/www/default;
+	server_name localhost 178.79.169.125;
+
+	index index.php index.htm index.html;
+
+	location / {
+		autoindex on;
+	}
+
+	location ~ .php$ {
+		fastcgi_pass    127.0.0.1:9000;
+		fastcgi_index   index.php;
+		fastcgi_param   SCRIPT_FILENAME  /var/www/default$fastcgi_script_name;
+		include         fastcgi_params;
+	}
+}
+

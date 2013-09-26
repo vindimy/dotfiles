@@ -1,0 +1,18 @@
+server {
+	root /var/www/fasttechla.net;
+	server_name fasttechla.net www.fasttechla.net;
+
+	location / {
+#		index index.php;
+		index index.htm;
+		autoindex off;
+	}
+
+#	location ~ .php$ {
+#		fastcgi_pass    127.0.0.1:9000;
+#		fastcgi_index   index.php;
+#		fastcgi_param   SCRIPT_FILENAME  /var/www/fasttechla.net$fastcgi_script_name;
+#		include         fastcgi_params;
+#	}
+}
+

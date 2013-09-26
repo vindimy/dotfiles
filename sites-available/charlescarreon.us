@@ -1,0 +1,12 @@
+server {
+	root /var/www/charlescarreon.us;
+	server_name charlescarreon.us www.charlescarreon.us;
+
+#	rewrite ^(.*) http://theoatmeal.com/blog/funnyjunk_letter;
+	rewrite ^/$ http://charlescarreon.us/uck;
+
+	location / {
+		index index.html;
+		autoindex off;
+	}
+}

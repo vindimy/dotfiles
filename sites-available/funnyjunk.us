@@ -1,0 +1,12 @@
+server {
+	root /var/www/funnyjunk.us;
+	server_name funnyjunk.us www.funnyjunk.us;
+
+#	rewrite ^(.*) http://theoatmeal.com/blog/funnyjunk_letter;
+	rewrite ^/$ http://funnyjunk.us/uck;
+
+	location / {
+		index index.html;
+		autoindex off;
+	}
+}

@@ -1,0 +1,43 @@
+server {
+	listen	*:80;
+	root /var/www/thedimi.net;
+	server_name thedimi.net www.thedimi.net dmitriy.us www.dmitriy.us;
+
+	location / {
+		rewrite ^/files/(.*) /blog/uploads/$1 permanent;
+		rewrite ^ $scheme://dmitriy.us/blog/ permanent;
+	}
+
+	location /wiki/ {
+		try_files $uri $uri/ @wiki;
+	}
+
+#	location @wiki {
+#		rewrite ^/wiki/openarena/setting-up-an-openarena-server /blog/3/setting-up-an-openarena-server-on-ubuntu-linux/ permanent;
+#		rewrite ^/wiki/openarena/optimizing-openarena-play-like-a-pro /blog/5/optimizing-openarena-play-like-a-pro/ permanent;
+#		rewrite ^/wiki/openarena/getting-openarena-maps-and-mods /blog/8/getting-openarena-maps-and-mods/ permanent;
+#	}
+
+	location /blog/ {
+		index index.php;
+		try_files $uri $uri/ @blog;
+	}
+
+	location @blog {
+		if (!-e $request_filename) {
+			rewrite ^/blog/.+$ /blog/index.php last;
+		}
+	}
+
+	location /blog/uploads/ {
+		autoindex on;
+	}
+
+	location ~ .php$ {
+		fastcgi_pass    127.0.0.1:9000;
+		fastcgi_index   index.php;
+		fastcgi_param   SCRIPT_FILENAME  /var/www/thedimi.net$fastcgi_script_name;
+		include         fastcgi_params;
+	}
+}
+

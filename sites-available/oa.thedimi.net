@@ -1,0 +1,18 @@
+server {
+	root /var/www/oa.thedimi.net;
+	server_name oa.thedimi.net;
+
+	index index.php;
+
+	location / {
+		autoindex on;
+	}
+
+	location ~ .php$ {
+		fastcgi_pass    127.0.0.1:9000;
+		fastcgi_index   index.php;
+		fastcgi_param   SCRIPT_FILENAME  /var/www/oa.thedimi.net$fastcgi_script_name;
+		include         fastcgi_params;
+	}
+}
+
