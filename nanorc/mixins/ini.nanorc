@@ -1,2 +1,0 @@
-KEYWORD: "^[[:space:]]*[^=]*="
-SECTION: "^[[:space:]]*\[.*\]$"

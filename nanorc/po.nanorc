@@ -1,7 +1,0 @@
-syntax "po" "\.pot?$"
-
-KEYWORD:  "\<(msgid|msgstr)\>"
-+STRING
-ESCAPE:   "\\.?"
-+HASHCOMMENT
-+LINT
