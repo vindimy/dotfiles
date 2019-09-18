@@ -1,0 +1,53 @@
+# https://docs.pi-hole.net/ftldns/regex/overview/
+# Execute the >recompile-regex API command (echo ">recompile-regex" | nc localhost 4711) or
+# Send SIGHUP to pihole-FTL (sudo killall -SIGHUP pihole-FTL) or
+# Restart the service (sudo service pihole-FTL restart)
+#
+# https://www.reddit.com/r/pihole/comments/b3fj60/regex_megathread/eoqymdj/
+^https?://([A-Za-z0-9.-]*\.)?clicks\.beap\.bc\.yahoo\.com/
+^https?://([A-Za-z0-9.-]*\.)?secure\.footprint\.net/
+^https?://([A-Za-z0-9.-]*\.)?match\.com/
+^https?://([A-Za-z0-9.-]*\.)?clicks\.beap\.bc\.yahoo(\.\w{2}\.\w{2}|\.\w{2 ,4})/
+^https?://([A-Za-z0-9.-]*\.)?sitescout(\.\w{2}\.\w{2}|\.\w{2,4})/
+^https?://([A-Za-z0-9.-]*\.)?appnexus(\.\w{2}\.\w{2}|\.\w{2,4})/
+^https?://([A-Za-z0-9.-]*\.)?evidon(\.\w{2}\.\w{2}|\.\w{2,4})/
+^https?://([A-Za-z0-9.-]*\.)?mediamath(\.\w{2}\.\w{2}|\.\w{2,4})/
+^https?://([A-Za-z0-9.-]*\.)?scorecardresearch(\.\w{2}\.\w{2}|\.\w{2,4})/
+^https?://([A-Za-z0-9.-]*\.)?doubleclick(\.\w{2}\.\w{2}|\.\w{2,4})/
+^https?://([A-Za-z0-9.-]*\.)?flashtalking(\.\w{2}\.\w{2}|\.\w{2,4})/
+^https?://([A-Za-z0-9.-]*\.)?turn(\.\w{2}\.\w{2}|\.\w{2,4})/
+^https?://([A-Za-z0-9.-]*\.)?mathtag(\.\w{2}\.\w{2}|\.\w{2,4})/
+^https?://([A-Za-z0-9.-]*\.)?googlesyndication(\.\w{2}\.\w{2}|\.\w{2,4})/
+^https?://([A-Za-z0-9.-]*\.)?s\.yimg\.com/cv/ae/us/audience/
+^https?://([A-Za-z0-9.-]*\.)?clicks\.beap/
+^https?://([A-Za-z0-9.-]*\.)?.doubleclick(\.\w{2}\.\w{2}|\.\w{2,4})/
+^https?://([A-Za-z0-9.-]*\.)?yieldmanager(\.\w{2}\.\w{2}|\.\w{2,4})/
+^https?://([A-Za-z0-9.-]*\.)?w55c(\.\w{2}\.\w{2}|\.\w{2,4})/
+^https?://([A-Za-z0-9.-]*\.)?adnxs(\.\w{2}\.\w{2}|\.\w{2,4})/
+^https?://([A-Za-z0-9.-]*\.)?advertising\.com/
+^https?://([A-Za-z0-9.-]*\.)?evidon\.com/
+^https?://([A-Za-z0-9.-]*\.)?scorecardresearch\.com/
+^https?://([A-Za-z0-9.-]*\.)?flashtalking\.com/
+^https?://([A-Za-z0-9.-]*\.)?turn\.com/
+^https?://([A-Za-z0-9.-]*\.)?mathtag\.com/
+^https?://([A-Za-z0-9.-]*\.)?surveylink/
+^https?://([A-Za-z0-9.-]*\.)?info\.yahoo\.com/
+^https?://([A-Za-z0-9.-]*\.)?ads\.yahoo\.com/
+^https?://([A-Za-z0-9.-]*\.)?global\.ard\.yahoo\.com/
+# https://github.com/mmotti/pihole-regex/blob/master/regex.list
+^(.+[-_.])??adse?rv(er?|ice)?s?[0-9]*[-.]
+^(.+[-_.])??m?ad[sxv]?[0-9]*[-_.]
+^(.+[-_.])??telemetry[-.]
+^(.+[-_.])??xn--
+^adim(age|g)s?[0-9]*[-_.]
+^adtrack(er|ing)?[0-9]*[-.]
+^advert(s|is(ing|ements?))?[0-9]*[-_.]
+^aff(iliat(es?|ion))?[-.]
+^analytics?[-.]
+^banners?[-.]
+^beacons?[0-9]*[-.]
+^count(ers?)?[0-9]*[-.]
+^pixels?[-.]
+^stat(s|istics)?[0-9]*[-.]
+^track(ers?|ing)?[0-9]*[-.]
+^traff(ic)?[-.]
